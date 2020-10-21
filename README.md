@@ -5,15 +5,17 @@ Practicing with Regular Expressions
 ### Trimming whitespaces from the beginning and end of a phrase.
 
 TEST
+```
 "				   The quick brown fox..."
 "jumps over the lazy dog.     "
-
-REGEX = ^\s*(.*)[^\s]*$
+```
+REGEX = ```^\s*(.*)[^\s]*$```
 
 RESULT
+```
 "The quick brown fox..."
 "jumps over the lazy dog."
-
+```
 
 
 ### Matching specific formats such as jpg, jpeg, gif, and png 
