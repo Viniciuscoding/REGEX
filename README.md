@@ -70,11 +70,31 @@ fillDown(ListView.java:652)
 fillFrom(ListView.java:709)
 ```
 
+### Find the URL's Scheme, Host and Port(optional).
 
+URIs, or Uniform Resource Identifiers, are a representation of a resource that is generally composed of a scheme, host, port (optional), and resource path, respectively highlighted below.
+scheme://host:port/page -> http://regexone.com:80/page
 
-
-
-
+TEST
+```
+ftp://file_server.com:21/top_secret/life_changing_plans.pdf
+https://regexone.com/lesson/introduction#section
+file://localhost:4040/zip_file
+https://s3cur3-server.com:9999/
+market://search/angry%20birds
+```
+REGEX
+```
+(\w+)://([\w\-\.]+)(:(\d+)\)?
+```
+RESULT
+```
+ftp://file_server.com:21
+https://regexone.com
+file://localhost:4040
+https://s3cur3-server.com:9999
+market://search
+```
 
 
 
