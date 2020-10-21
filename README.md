@@ -46,6 +46,35 @@ favicon.gif
 damn.jpeg
 ```
 
-### 
+### Extract the filename, method name and line number from
+
+"at package.class.methodname(filename.linenumber)"
+
+TEST
+```
+W/dalvikvm( 1553): threadid=1: uncaught exception
+E/( 1553): FATAL EXCEPTION: main
+E/( 1553): java.lang.StringIndexOutOfBoundsException
+E/( 1553):   at widget.List.makeView(ListView.java:1727)
+E/( 1553):   at widget.List.fillDown(ListView.java:652)
+E/( 1553):   at widget.List.fillFrom(ListView.java:709)
+```
+REGEX
+```
+(w+)\(([\w\.]+):(\d+)\)
+```
+RESULT
+```
+makeView(ListView.java:1727)
+fillDown(ListView.java:652)
+fillFrom(ListView.java:709)
+```
+
+
+
+
+
+
+
 
 
