@@ -122,5 +122,34 @@ RESULT
 1 1 2000
 ```
 
+### Finding Palindromes
+TEST
+```
+evacaniseebeesinacaveNO
+evacaniseebeesinacave
+redrumsirismurder
+steponnopets
+repaper
+rotator
+rotor
+mom
+ww
+dadier
+```
+REGEX
+```
+\b(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?\w?\10\9\8\7\6\5\4\3\2\1\b
+```
+RESULT
+```
+evacaniseebeesinacave
+redrumsirismurder
+steponnopets
+repaper
+rotator
+rotor
+mom
+ww
+```
 
 
