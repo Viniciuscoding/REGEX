@@ -124,20 +124,22 @@ RESULT
 
 ### Finding Palindromes
 
-This regex to find palindromes is limited to palindromes with 21 characters. It excludes 1 and 2 characters words.
+This regex palindromes finding is limited to 21 characters long. It excludes words with 1 or 2 characters.
 
 TEST
 ```
-evacaniseebeesinacaveNO
+canevacaniseebeesinacave
 evacaniseebeesinacave
 redrumsirismurder
 steponnopets
 repaper
 rotator
+dadier
 rotor
 mom
-ww
-dadier
+mm
+s
+w
 ```
 REGEX
 ```
