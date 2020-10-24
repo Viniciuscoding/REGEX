@@ -123,6 +123,9 @@ RESULT
 ```
 
 ### Finding Palindromes
+
+This regex to find palindromes is limited to palindromes with 21 characters. It excludes 1 and 2 characters words.
+
 TEST
 ```
 evacaniseebeesinacaveNO
@@ -138,7 +141,7 @@ dadier
 ```
 REGEX
 ```
-\b(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?\w?\10\9\8\7\6\5\4\3\2\1\b
+\b(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w)?(\w){1}\w{1,2}\10\9\8\7\6\5\4\3\2\1\b
 ```
 RESULT
 ```
