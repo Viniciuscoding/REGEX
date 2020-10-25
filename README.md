@@ -96,7 +96,7 @@ https://s3cur3-server.com:9999
 market://search
 ```
 
-### Find dates
+### Find dates (using Word Boundaries)
 
 TEST
 ```
@@ -156,5 +156,99 @@ rotor
 mom
 ww
 ```
+
+### Finding IP Addresses
+
+TEST
+```
+255.255.255.255
+198.12.128.27
+0.0.0.0
+This is a character O not a number 0 in the IP O.255.123.12
+198.12.128.255
+198.255.128.0
+this is my IP: 198.12.128.125
+Wow her/his IP address is 255.0.255.11? No way!!!!
+The IP 0.255.123..12 has a typo
+```
+REGEX
+```
+\b(([01]?\d{1,2}?\.){1}|(2[0-5]{2}\.){1})(([01]?\d{1,2}?\.){1}|(2[0-5]{2}\.){1})(([01]?\d{1,2}?\.){1}|(2[0-5]{2}\.){1})(([01]?\d{1,2})|(2[0-5]{2}))\b
+```
+RESULT
+```
+255.255.255.255
+198.12.128.27
+0.0.0.0
+198.12.128.255
+198.255.128.0
+198.12.128.125
+255.0.255.11
+```
+
+
+TEST
+```
+
+```
+REGEX
+```
+
+```
+RESULT
+```
+
+```
+
+
+
+TEST
+```
+
+```
+REGEX
+```
+
+```
+RESULT
+```
+
+```
+
+
+
+TEST
+```
+
+```
+REGEX
+```
+
+```
+RESULT
+```
+
+```
+
+
+
+TEST
+```
+
+```
+REGEX
+```
+
+```
+RESULT
+```
+
+```
+
+
+
+
+
+
 
 
