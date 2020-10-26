@@ -186,18 +186,32 @@ RESULT
 255.0.255.11
 ```
 
+### Finding lowercase characters that repeats 4 or more times consecutively
 
 TEST
 ```
-
+fffffff uuuu ccc kk!
+Why people say ffff when they are angry
+This is the institution IEEE I spoke about.
+Zzzzzz
+EEEE
+fffffggggghhhhdddssa
+aaaa nao da nao
+bbbbbboa irmao
+9999
 ```
 REGEX
 ```
-
+a{4,}|b{4,}|c{4,}|d{4,}|e{4,}|f{4,}|g{4,}|h{4,}|i{4,}|j{4,}|k{4,}|l{4,}|m{4,}|n{4,}|o{4,}|p{4,}|q{4,}|r{4,}|s{4,}|t{4,}|u{4,}|v{4,}|w{4,}|x{4,}|y{4,}|z{4,}
 ```
 RESULT
 ```
-
+fffffff uuuu ccc kk!
+Why people say ffff when they are angry
+Zzzzzz
+fffffggggghhhhdddssa
+aaaa nao da nao
+bbbbbboa irmao
 ```
 
 
