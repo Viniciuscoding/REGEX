@@ -217,19 +217,29 @@ aaaa nao da nao
 bbbbbboa irmao
 ```
 
+### Using FORWARD REFERENCE
 
+**group_2** = tac
+**group_1** = **group_2** and tic OR **group_2**
+
+First it will try to match **group_2** and tic but still we didn't captured **group_2** so we don't get it at first place.
+So it will match **group_2** == tac [this will make **group_1** == (tactic|tac)] than beacuse of + we can match any alternatives from (tactic|tac) more than 1 times.
 
 TEST
 ```
-
+tactactic
+tactictac
+tactactictactic
+tactactictactictictac
 ```
 REGEX
 ```
-dah
+'^(\2tic|(tac))+$'
 ```
 RESULT
 ```
-
+tactactic
+tactactictactic
 ```
 
 
