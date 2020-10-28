@@ -245,7 +245,7 @@ tactactictactic
 ### Positive Lookahead (?=)
 by Hackerrank (https://www.hackerrank.com/challenges/positive-lookahead/problem)
 
-**regex1(?=regex2)**<\b>
+**regex1(?=regex2)**<br />
 The positive lookahead (?=) asserts **regex1** to be immediately followed by **regex2**. The lookahead is excluded from the match. It does not return matches of **regex2**. The lookahead only asserts whether a match is possible or not.
 
 TEST
@@ -270,7 +270,7 @@ very goood -> o
 ```
 
 ### Negative Lookahead (?!)
-by Hackerrank <\b>
+by Hackerrank <br />
 Write a regex which can match all characters which are not immediately followed by that same character.
 Example: If = goooo, then regex should match goooo. Because the first g is not follwed by g and the last o is not followed by o.
 
