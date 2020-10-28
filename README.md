@@ -270,7 +270,7 @@ very goood -> o
 ```
 
 ### Negative Lookahead (?!)
-by Hackerrank <br />
+by Hackerrank https://www.hackerrank.com/challenges/negative-lookahead/problem <br />
 Write a regex which can match all characters which are not immediately followed by that same character.
 Example: If = goooo, then regex should match goooo. Because the first g is not follwed by g and the last o is not followed by o.
 
