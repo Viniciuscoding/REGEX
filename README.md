@@ -243,18 +243,30 @@ tactactictactic
 ```
 
 ### Positive Lookahead (?=)
+by Hackerrank (https://www.hackerrank.com/challenges/positive-lookahead/problem)
+
+regex1(?=regex2)
+The positive lookahead (?=) asserts **regex1** to be immediately followed by **regex2**. The lookahead is excluded from the match. It does not return matches of **regex2**. The lookahead only asserts whether a match is possible or not.
 
 TEST
 ```
-
+goooool!
+look at that
+coooolio
+cool beans
+ooo|o(0.*)ooo|o
+very goood
 ```
 REGEX
 ```
-
+r'o(?=o{2})'
 ```
 RESULT
 ```
-
+goooool! -> ooo
+coooolio -> oo
+ooo|o(0.*)ooo|o -> o o
+very goood -> o
 ```
 
 
