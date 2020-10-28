@@ -269,6 +269,34 @@ ooo|o(0.*)ooo|o -> o o
 very goood -> o
 ```
 
+### Negative Lookahead (?!)
+by Hackerrank 
+Write a regex which can match all characters which are not immediately followed by that same character.
+Example: If = goooo, then regex should match goooo. Because the first g is not follwed by g and the last o is not followed by o.
+
+TEST
+```
+loooooooooooooool
+goooool!
+coooolio
+goooo
+ooops
+cool
+```
+REGEX
+```
+(.)(?!\1)
+```
+RESULT
+```
+loooooooooooooool -> lol
+goooool! -> gol!
+coooolio -> colio
+goooo -> go
+ooops -> ops
+cool -> col
+```
+
 
 
 TEST
@@ -286,8 +314,30 @@ RESULT
 
 
 
+TEST
+```
+
+```
+REGEX
+```
+
+```
+RESULT
+```
+
+```
 
 
 
+TEST
+```
 
+```
+REGEX
+```
 
+```
+RESULT
+```
+
+```
