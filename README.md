@@ -348,7 +348,9 @@ ppppp
 al
 ```
 
-### Finding HTLM tags: <a><p><t><dir><h1></p></t></a></dir><p/>
+### Finding HTLM tags: ```<a> <p> <t> <dir> <h1> </p> </t> </a> </dir> <p/>```
+
+NOTE: This solution only looks for the opening tag rather than both opening and ending tags. If you want to find the context within the tags than the ending tag must be found as well. 
 
 TEST
 ```
@@ -357,15 +359,21 @@ html = '<p><a href="http://www.quackit.com/html/tutorial/html_links.cfm">Example
 ```
 REGEX
 ```
-r'(?<=<)\w+'
+r'(?<=<\/?)\w+' # If the regex only supports lookahead fixed-width pattern the use the bellow patterns
+r'(?<=<)\w+|\w+(?=>)' or r'(?<=<)\w+|(?<=</)\w+' # positive lookbehind + positive lookahead or positive lookbehind + positive lookbehind
+
+This solution keeps the <>
+r'<\/?\w+\/?>?'
 ```
 PYTHON
 ```
 print(';'.join(sorted(set(re.findall('(?<=<)\w+', html)))))
+print(re.findall('(?<=<)\w+', html)))
 ```
 RESULT
 ```
 a;div;p
+['<p>', '<a', '</a>', '</p>', '<div', '<a', '</a>', '</div>']
 ```
 
 
