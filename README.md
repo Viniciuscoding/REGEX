@@ -348,6 +348,26 @@ ppppp
 al
 ```
 
+### Finding HTLM tags: <a><p><t><dir><h1></p></t></a></dir><p/>
+
+TEST
+```
+html = '<p><a href="http://www.quackit.com/html/tutorial/html_links.cfm">Example Link</a></p> \
+<div class="more-info"><a href="http://www.quackit.com/html/examples/html_links_examples.cfm">More Link Examples...</a></div>"'
+```
+REGEX
+```
+r'(?<=<)\w+'
+```
+PYTHON
+```
+print(';'.join(sorted(set(re.findall('(?<=<)\w+', html)))))
+```
+RESULT
+```
+a;div;p
+```
+
 
 
 TEST
@@ -362,3 +382,39 @@ RESULT
 ```
 
 ```
+
+
+
+TEST
+```
+
+```
+REGEX
+```
+
+```
+RESULT
+```
+
+```
+
+
+
+TEST
+```
+
+```
+REGEX
+```
+
+```
+RESULT
+```
+
+```
+
+
+
+
+
+
