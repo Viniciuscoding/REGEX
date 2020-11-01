@@ -1,7 +1,7 @@
 # REGEX
 Practicing with Regular Expressions
 
-\w -> word characters are defined as: English alphabetic characters [a-zA-Z], decimal digits [0-9] and underscore "_"
+**\w** -> word characters are defined as: English alphabetic characters [a-zA-Z], decimal digits [0-9] and underscore "_"
 
 
 
