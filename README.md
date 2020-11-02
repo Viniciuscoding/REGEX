@@ -163,7 +163,7 @@ mom
 ww
 ```
 
-### Finding IP Addresses
+### Finding IP Addresses (IPv4)
 
 TEST
 ```
@@ -211,6 +211,34 @@ RESULT
 198.12.128.255
 this is my IP: 198.12.128.125
 Wow her/his IP address is 255.0.255.11? No way!!!!
+```
+
+### Finding IP Addresses (IPv6)
+
+TEST
+```
+2001:0db8:0000:0000:0000:ff00:0042:8329  
+21:db8:0:0:0:ff00:42:8320
+ffff:ffff:ffff:1000:42:8320:7
+ffff:ffff:ffff:0001:0002:0003:0004
+ffff:ffff:ffff:001:02:0300:0040
+255.255.255.255
+198.12.128.27
+0.0.0.0
+is 21:db8:0:1:2:ff00:42:8320 this IPv4 or IPv6
+```
+REGEX
+```
+\b([a-fA-F0-9]{1,4}:){7}[a-fA-F0-9]{1,4}\b
+```
+RESULT
+```
+2001:0db8:0000:0000:0000:ff00:0042:8329  
+21:db8:0:0:0:ff00:42:8320
+ffff:ffff:ffff:1000:42:8320:7
+ffff:ffff:ffff:0001:0002:0003:0004
+ffff:ffff:ffff:001:02:030:040:0002 THIS SHOULD FAIL [NEED TO IMPROVE THIS CODE]
+is 21:db8:0:1:2:ff00:42:8320 this IPv4 or IPv6
 ```
 
 ### Finding lowercase characters that repeats 4 or more times consecutively
