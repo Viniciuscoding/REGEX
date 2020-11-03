@@ -356,7 +356,7 @@ cool -> col
 ### Positive Lookbehind (?<=)
 by Hackerrank
 
-(?<=regex_2)regex_1
+**(?<=regex_2)regex_1**<br />
 The positive lookbehind **(?<=)** asserts **regex_1** to be immediately preceded by **regex_2**. Lookbehind is excluded from the match (do not consume matches of **regex_2**), but only assert whether a match is possible or not.
 
 Write a regex which can match all the occurences of digit which are immediately preceded by odd digit.
@@ -378,7 +378,7 @@ he31o -> 1
 
 ### Negative Lookbehind (?<!)
 
-(?<!regex_2)regex_1
+**(?<!regex_2)regex_1**<br />
 The negative lookbehind (?<!) asserts **regex_1** not to be immediately preceded by **regex_2**. Lookbehind is excluded from the match (do not consume matches of **regex_2**), but only assert whether a match is possible or not.
 
 TEST
