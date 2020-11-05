@@ -428,19 +428,26 @@ a;div;p
 ['<p>', '<a', '</a>', '</p>', '<div', '<a', '</a>', '</div>']
 ```
 
-### Finding a word which ignores space and end of line or other symbols
+### Using regex with multiple variables in within with re.findall(regex, string)
 
-TEST
-```
+I solved this question I had on StackOverflow
+https://stackoverflow.com/questions/14059596/python-regular-expression-findall-with-variable/64690235#64690235
 
-```
 REGEX
 ```
-
+re.find(rf'{var1} {var2} ... {varN}', string)
+```
+PYTHON
+```
+text = "regex is the best"    
+var1 = "is the"
+var2 = " best"
+yes = re.findall(rf"regex {var1} {var2}", text)
+print(yes)
 ```
 RESULT
 ```
-
+['regex is the best']
 ```
 
 
