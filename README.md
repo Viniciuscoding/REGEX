@@ -428,7 +428,7 @@ a;div;p
 ['<p>', '<a', '</a>', '</p>', '<div', '<a', '</a>', '</div>']
 ```
 
-### Using regex with multiple variables in within with re.findall(regex, string)
+### Using regex with multiple variables in within using re.findall(regex, string)
 
 I solved this question I had on StackOverflow
 https://stackoverflow.com/questions/14059596/python-regular-expression-findall-with-variable/64690235#64690235
@@ -449,6 +449,8 @@ RESULT
 ```
 ['regex is the best']
 ```
+
+
 
 
 
