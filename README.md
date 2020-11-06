@@ -456,7 +456,21 @@ RESULT
 
 TEST
 ```
-
+mpotts@ngs.org
+jbmccorm@ngs.org
+http://www.nationalgeographic.com/faq/
+ngsdigital@customersvc.com or call 1-800-895-2068
+email us at ngsdigital@customersvc.com or call 1-800-895-2068.
+feedback@natgeotv.com
+national-geographicexpeditions.com.
+genographic@ngs.org
+genographicespanol@ngs.org
+iPhone, iPad, Android, Windows Mobile 7, and more: apps@ngs.org.
+maps@ngs.org
+stock@ngs.org
+ngassignment@ngs.org
+newsdesk@nationalgeographic.com
+askngs@nationalgeographic.com
 ```
 REGEX
 ```
@@ -464,7 +478,20 @@ r(?<=[^a-zA-Z0-9])[a-zA-Z0-9_.-]+@[\w\.]+\.\w+(?=[^a-zA-Z0-9])
 ```
 RESULT
 ```
-
+mpotts@ngs.org
+jbmccorm@ngs.org
+ngsdigital@customersvc.com
+feedback@natgeotv.com
+national-geographicexpeditions.com
+genographic@ngs.org
+genographicespanol@ngs.org
+apps@ngs.org.
+maps@ngs.org
+stock@ngs.org
+ngassignment@ngs.org
+newsdesk@nationalgeographic.com
+askngs@nationalgeographic.com
+ask_ngs@nationalgeographic.ni
 ```
 
 
