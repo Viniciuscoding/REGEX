@@ -450,7 +450,7 @@ RESULT
 ['regex is the best']
 ```
 
-
+### Finding all sort of emails
 
 
 
@@ -460,7 +460,7 @@ TEST
 ```
 REGEX
 ```
-
+r(?<=[^a-zA-Z0-9])[a-zA-Z0-9_.-]+@[\w\.]+\.\w+(?=[^a-zA-Z0-9])
 ```
 RESULT
 ```
