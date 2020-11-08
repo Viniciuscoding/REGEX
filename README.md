@@ -451,47 +451,95 @@ RESULT
 ```
 
 ### Finding all sort of emails
+Source: https://en.wikipedia.org/wiki/Email_address#:~:text=The%20general%20format%20of%20an,username%20and%20a%20domain%20name.
 
-Using regular expression to find many kind of emails.
+**Local-Part**
+The local-part of the email address may be unquoted or may be enclosed in quotation marks.
+
+If unquoted, it may use any of these ASCII characters:
+```
+1. uppercase and lowercase Latin letters A to Z and a to z
+2. digits 0 to 9
+3. allowed printable characters !#$%&'*+-/=?^_`{|}~
+4. only allowed between double quotes \s"(),:;<>@[\]
+5. dot ., provided that it is not the first or last character and provided also that it does not appear consecutively (e.g., John..Doe@example.com is not allowed).
+If quoted, it may contain Space, Horizontal Tab (HT), any ASCII graphic except Backslash and Quote and a quoted-pair consisting of a Backslash followed by HT, Space or any ASCII graphic; it may also be split between lines anywhere that HT or Space appears. In contrast to unquoted local-parts, the addresses ".John.Doe"@example.com, "John.Doe."@example.com and "John..Doe"@example.com are allowed.
+```
+The maximum total length of the local-part of an email address is 64 octets.
+
+Note that some mail servers support wildcard recognition of local parts, typically the characters following a plus and less often the characters following a minus, so fred+bah@domain and fred+foo@domain might end up in the same inbox as fred+@domain or even as fred@domain. This can be useful for tagging emails for sorting (see below), and for spam control.[7] Braces { and } are also used in that fashion, although less often.
+
+```
+space and special characters "(),:;<>@[\] are allowed with restrictions (they are only allowed inside a quoted string, as described in the paragraph below, and in addition, a backslash or double-quote must be preceded by a backslash);
+comments are allowed with parentheses at either end of the local-part; e.g., john.smith(comment)@example.com and (comment)john.smith@example.com are both equivalent to john.smith@example.com.
+In addition to the above ASCII characters, international characters above U+007F, encoded as UTF-8, are permitted by RFC 6531, though even mail systems that support SMTPUTF8 and 8BITMIME may restrict which characters to use when assigning local-parts.
+```
+A local part is either a Dot-string or a Quoted-string; it cannot be a combination. Quoted strings and characters, however, are not commonly used. RFC 5321 also warns that "a host that expects to receive mail SHOULD avoid defining mailboxes where the Local-part requires (or uses) the Quoted-string form".
+
+The local-part postmaster is treated specially—it is case-insensitive, and should be forwarded to the domain email administrator. Technically all other local-parts are case-sensitive, therefore jsmith@example.com and JSmith@example.com specify different mailboxes; however, many organizations treat uppercase and lowercase letters as equivalent. Indeed, RFC 5321 warns that "a host that expects to receive mail SHOULD avoid defining mailboxes where ... the Local-part is case-sensitive".
+
+Despite the wide range of special characters which are technically valid, organisations, mail services, mail servers and mail clients in practice often do not accept all of them. For example, Windows Live Hotmail only allows creation of email addresses using alphanumerics, dot (.), underscore (_) and hyphen (-). Common advice is to avoid using some special characters to avoid the risk of rejected emails.
+
+**Domain**
+The domain name part of an email address has to conform to strict guidelines: it must match the requirements for a hostname, a list of dot-separated DNS labels, each label being limited to a length of 63 characters and consisting of:
+```
+1. uppercase and lowercase Latin letters A to Z and a to z;
+2. digits 0 to 9, provided that top-level domain names are not all-numeric;
+3. hyphen -, provided that it is not the first or last character.
+```
+This rule is known as the LDH rule (letters, digits, hyphen). In addition, the domain may be an IP address literal, surrounded by square brackets [], such as jsmith@[192.168.2.1] or jsmith@[IPv6:2001:db8::1], although this is rarely seen except in email spam. Internationalized domain names (which are encoded to comply with the requirements for a hostname) allow for presentation of non-ASCII domains. In mail systems compliant with RFC 6531 and RFC 6532 an email address may be encoded as UTF-8, both a local-part as well as a domain name.
+
+Comments are allowed in the domain as well as in the local-part; for example, john.smith@(comment)example.com and john.smith@example.com(comment) are equivalent to john.smith@example.com.
+
 
 TEST
 ```
-mpotts@ngs.org
-jbmccorm@ngs.org
-http://www.nationalgeographic.com/faq/
-ngsdigital@customersvc.com or call 1-800-895-2068
-email us at ngsdigital@customersvc.com or call 1-800-895-2068.
-feedback@natgeotv.com
-national-geographicexpeditions.com.
-genographic@ngs.org
-genographicespanol@ngs.org
-iPhone, iPad, Android, Windows Mobile 7, and more: apps@ngs.org.
-maps@ngs.org
-stock@ngs.org
-ngassignment@ngs.org
-newsdesk@nationalgeographic.com
-askngs@nationalgeographic.com
+VALID EMAILS
+simple@example.com
+very.common@example.com
+disposable.style.email.with+symbol@example.com
+other.email-with-hyphen@example.com
+fully-qualified-domain@example.com
+user.name+tag+sorting@example.com (may go to user.name@example.com inbox depending on mail server)
+x@example.com (one-letter local-part)
+example-indeed@strange-example.com
+admin@mailserver1 (local domain name with no TLD, although ICANN highly discourages dotless email addresses[10])
+example@s.example (see the List of Internet top-level domains)
+" "@example.org (space between the quotes)
+"john..doe"@example.org (quoted double dot)
+mailhost!username@example.org (bangified host route used for uucp mailers)
+user%example.com@example.org (% escaped mail route to user@example.com via example.org)
+
+INVALID EMAILS
+Abc.example.com (no @ character)
+A@b@c@example.com (only one @ is allowed outside quotation marks)
+a"b(c)d,e:f;g<h>i[j\k]l@example.com (none of the special characters in this local-part are allowed outside quotation marks)
+just"not"right@example.com (quoted strings must be dot separated or the only element making up the local-part)
+this is"not\allowed@example.com (spaces, quotes, and backslashes may only exist when within quoted strings and preceded by a backslash)
+this\ still\"not\\allowed@example.com (even if escaped (preceded by a backslash), spaces, quotes, and backslashes must still be contained by quotes)
+1234567890123456789012345678901234567890123456789012345678901234+x@example.com (local part is longer than 64 characters)
+i_like_underscore@but_its_not_allow_in_this_part.example.com (Underscore is not allowed in domain part)
 ```
 REGEX
 ```
 r(?<=[^a-zA-Z0-9])[a-zA-Z0-9_.-]+@[\w\.]+\.\w+(?=[^a-zA-Z0-9])
+MORE ACCURATE -> r(?<=[^a-zA-Z0-9])([a-zA-Z0-9][\"!#$%&'*+/=?^_`{|}~_.-]?[a-zA-Z0-9]?)+@[a-zA-Z0-9-.]+\.\w+(?=[^a-zA-Z0-9])
 ```
 RESULT
 ```
-mpotts@ngs.org
-jbmccorm@ngs.org
-ngsdigital@customersvc.com
-feedback@natgeotv.com
-national-geographicexpeditions.com
-genographic@ngs.org
-genographicespanol@ngs.org
-apps@ngs.org.
-maps@ngs.org
-stock@ngs.org
-ngassignment@ngs.org
-newsdesk@nationalgeographic.com
-askngs@nationalgeographic.com
-ask_ngs@nationalgeographic.ni
+simple@example.com
+very.common@example.com
+disposable.style.email.with+symbol@example.com
+other.email-with-hyphen@example.com
+fully-qualified-domain@example.com
+user.name+tag+sorting@example.com (may go to user.name@example.com inbox depending on mail server)
+x@example.com (one-letter local-part)
+example-indeed@strange-example.com
+example@s.example (see the List of Internet top-level domains)
+doe"@example.org # This should not be found. I need to write something that catch in between double quotes
+mailhost!username@example.org (bangified host route used for uucp mailers)
+user%example.com@example.org
+1234567890123456789012345678901234567890123456789012345678901234+x@example.com # Should not find this
 ```
 
 
