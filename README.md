@@ -454,6 +454,7 @@ RESULT
 Source: https://en.wikipedia.org/wiki/Email_address#:~:text=The%20general%20format%20of%20an,username%20and%20a%20domain%20name.
 
 **Local-Part**
+
 The local-part of the email address may be unquoted or may be enclosed in quotation marks.
 
 If unquoted, it may use any of these ASCII characters:
@@ -481,6 +482,7 @@ The local-part postmaster is treated specially—it is case-insensitive, and sho
 Despite the wide range of special characters which are technically valid, organisations, mail services, mail servers and mail clients in practice often do not accept all of them. For example, Windows Live Hotmail only allows creation of email addresses using alphanumerics, dot (.), underscore (_) and hyphen (-). Common advice is to avoid using some special characters to avoid the risk of rejected emails.
 
 **Domain**
+
 The domain name part of an email address has to conform to strict guidelines: it must match the requirements for a hostname, a list of dot-separated DNS labels, each label being limited to a length of 63 characters and consisting of:
 ```
 1. uppercase and lowercase Latin letters A to Z and a to z;
