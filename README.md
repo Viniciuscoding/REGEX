@@ -583,46 +583,48 @@ Returns the group 2 in the regular expression (([a-zA-Z0-9-]+\.)+[a-zA-Z]+)
 domain_group2 = sorted(set([i.group(2) for i in re.finditer(r'https?:\/\/(ww[w2]\.)?(([a-zA-Z0-9-]+\.)+[a-zA-Z]+)', text)]))
 ```
 
-### Something
+### Finding the comments within coding lines
 
-Finding the comments in coding code lines
+This regex only looks for #, // or /* ... */ comments
 
 TEST
 ```
- /*This is a program to calculate area of a circle after getting the radius as input from the user*/
-#include<stdio.h>
-int main()
-{
-   double radius,area;//variables for storing radius and area
-   printf("Enter the radius of the circle whose area is to be calculated\n");
-   scanf("%lf",&radius);//entering the value for radius of the circle as float data type
-   area=(22.0/7.0)*pow(radius,2);//Mathematical function pow is used to calculate square of radius
-   printf("The area of the circle is %lf",area);//displaying the results
-   getch();
-}
-/*A test run for the program was carried out and following output was observed
-If 50 is the radius of the circle whose area is to be calculated
-The area of the circle is 7857.1429*/
+'/*This is a program to calculate area of a circle after getting the radius as input from the user*/\n\
+#include<stdio.h>\n\
+int main()\n\
+# what is this?\n\
+""" this is comments in Python but sometimes it is hard to find it """ \n\
+double radius,area;//variables for storing radius and area\n\
+printf("Enter the radius of the circle whose area is to be calculated\n");\
+scanf("%lf",&radius);//entering the value for radius of the circle as float data type\n\
+area=(22.0/7.0)*pow(radius,2);//Mathematical function pow is used to calculate square of radius\n\
+printf("The area of the circle is %lf",area);//displaying the results\n\
+getch();\n\
+}\n\
+/*A test run for the program was carried out and following output was observed \
+If 50 is the radius of the circle whose area is to be calculated\
+The area of the circle is 7857.1429*/'
 ```
 REGEX
 ```
-r'\/\/.+(?=\n)|\/\*[\S\s]*?\*\/' -> [\S\s] match everything including new lines
-r'\/\/.+(?=\n)|\/\*[^]*?\*\/' -> [^] might not work on certain versions
+r'#.*|\/\/.*|\/\*[\S\s]*?\*\/|"""[\S\s]*?"""' -> [\S\s] match everything including new lines
+r'#.*|\/\/.*|\/\*[^]*?\*\/|"""[\S\s]*?"""' -> [^] might not work on certain versions
 ```
 PYTHON
 ```
-print('\n'.join(re.findall(r'\/\/.+(?=\n)|\/\*[\S\s]*?\*\/', text)))
+print('\n'.join(re.findall(r'#.*|\/\/.*|\/\*[\S\s]*?\*\/|"""[\S\s]*?"""', text)))
 ```
 RESULT
 ```
 /*This is a program to calculate area of a circle after getting the radius as input from the user*/
+#include<stdio.h>
+# what is this?
+""" this is comments in Python but sometimes it is hard to find it """
 //variables for storing radius and area
 //entering the value for radius of the circle as float data type
 //Mathematical function pow is used to calculate square of radius
 //displaying the results
-/*A test run for the program was carried out and following output was observed
-If 50 is the radius of the circle whose area is to be calculated
-The area of the circle is 7857.1429*/
+/*A test run for the program was carried out and following output was observed If 50 is the radius of the circle whose area is to be calculatedThe area of the circle is 7857.1429*/
 ```
 
 ### Something
