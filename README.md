@@ -627,23 +627,59 @@ RESULT
 /*A test run for the program was carried out and following output was observed If 50 is the radius of the circle whose area is to be calculatedThe area of the circle is 7857.1429*/
 ```
 
-### Something
+### Detecting Valid Latitude and Longitude Pairs
 
+For a valid (latitude, longitude) pair: 
+```
+-90<=X<=+90 and -180<=Y<=180. 
+They will not contain any symbols for degrees or radians or N/S/E/W. There may or may not be a +/- sign preceding X or Y. 
+There will be a space between Y and the comma before it. 
+There will be no space between X and the preceding left-bracket, or between Y and the following right-bracket. 
+There will be no unnecessary zeros (0) before X or Y.
+```
 TEST
 ```
-
+(-7, -177)
+(-7.271374, -177.271374)
+(-43, -27)
+(-43.831794, -27.831794)
+(-58, -104)
+(-58.34101, -104.34101)
+(-101, -229)
+(-101.924007, -229.924007)
+(-90.0001, -123)
+(-9.599994, -223.599994)
+(-100, -16)
+(-100.203379, -16.203379)
+(-18, -75)
+(-18.207640, -75.207640)
+(-23, -180.2)
+(-113.475823, -277.475823)
+(-38, -25)
+(-38.168050, -25.168050)
+(-56, -105)(-22,+140)
 ```
 REGEX
 ```
-
+r'\([+-]?(([1-8]?[0-9](\.\d+)?)|90(\.0+)?),\s?[+-]?((((1[0-7]\d)|(\d?\d))(\.\d+)?)|180(\.0+)?)\)'
 ```
 PYTHON
 ```
-
+result = re.findall('\(([+-]?(([1-8]?[0-9](\.\d+)?)|90(\.0+)?),\s?[+-]?((((1[0-7]\d)|(\d?\d))(\.\d+)?)|180(\.0+)?))\)', text)
 ```
 RESULT
 ```
-
+(-7, -177)
+(-7.271374, -177.271374)
+(-43, -27)
+(-43.831794, -27.831794)
+(-58, -104)
+(-58.34101, -104.34101)
+(-18, -75)
+(-18.207640, -75.207640)
+(-38, -25)
+(-38.168050, -25.168050)
+(-56, -105)(-22,+140)
 ```
 
 ### Something
