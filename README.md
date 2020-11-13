@@ -269,7 +269,7 @@ aaaa nao da nao
 bbbbbboa irmao
 ```
 
-### Using FORWARD REFERENCE
+### Foward Reference
 
 **group_2** = tac
 **group_1** = **group_2** and tic OR **group_2**
