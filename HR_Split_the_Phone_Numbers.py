@@ -55,7 +55,7 @@ You can view others' submissions if you solve this challenge. Navigate to the ch
 import re
 for _ in range(int(input())):
     pN = re.findall(r'(\d{1,3})[-\s](\d{1,3})[-\s](\d{4,10})', input(), re.DOTALL)
-    # print("CountryCode={},LocalAreaCode={},Number={}".format(pN[0][0], pN[0][1], pN[0][2]))
+    print("CountryCode={},LocalAreaCode={},Number={}".format(pN[0][0], pN[0][1], pN[0][2]))
     print('CountryCode=%s,LocalAreaCode=%s,Number=%s' % pN[0])
     
 # SOLUTION by pythoncharmer
