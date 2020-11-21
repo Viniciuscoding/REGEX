@@ -524,8 +524,8 @@ i_like_underscore@but_its_not_allow_in_this_part.example.com (Underscore is not 
 ```
 REGEX
 ```
-r(?<=[^a-zA-Z0-9])[a-zA-Z0-9_.-]+@[\w\.]+\.\w+(?=[^a-zA-Z0-9])
-MORE ACCURATE -> r(?<=[^a-zA-Z0-9])([a-zA-Z0-9][\"!#$%&'*+/=?^_`{|}~_.-]?[a-zA-Z0-9]?)+@[a-zA-Z0-9-.]+\.\w+(?=[^a-zA-Z0-9])
+r'(?<=[^a-zA-Z0-9])[a-zA-Z0-9_.-]+@[\w\.]+\.\w+(?=[^a-zA-Z0-9])'
+MORE ACCURATE -> r'(?<=[^a-zA-Z0-9])([a-zA-Z0-9][\"!#$%&'*+/=?^_`{|}~_.-]?[a-zA-Z0-9]?)+@[a-zA-Z0-9-.]+\.\w+(?=[^a-zA-Z0-9])'
 ```
 RESULT
 ```
