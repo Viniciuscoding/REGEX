@@ -1,4 +1,4 @@
-/*Find HackerRank
+"""Find HackerRank
 
 At HackerRank, we always want to find out how popular we are getting every day and have scraped conversations from popular sites. 
 Each conversation fits in 1 line and there are N such conversations. Each conversation has at most 1 word that says hackerrank (all in lowercase). 
@@ -50,7 +50,7 @@ The first conversation ends with hackerrank and hence 2
 The second conversation starts with hackerrank and hence 1
 The third conversation has only one word, it starts and ends with hackerrank and hence 0.
 The fourth conversation satisfies none of the above properties and hence -1.
-*/
+"""
 
 # My Solution
 
