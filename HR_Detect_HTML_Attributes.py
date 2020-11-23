@@ -1,6 +1,5 @@
 """Detect HTML Attributes
 
-
 Charlie's second assignment was given by the Professor as soon as he submitted the first one. Professor asked Charlie to create a list of all the attributes
 of every tag found in HTML pages.
 
