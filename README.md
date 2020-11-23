@@ -682,23 +682,53 @@ RESULT
 (-56, -105)(-22,+140)
 ```
 
-### Something
+### Finding HTML Attributes
+
+
 
 TEST
 ```
-
+<p><a href="http://www.quackit.com/html/tutorial/html_links.cfm">Example Link</a></p>
+<div class="more-info"><a href="http://www.quackit.com/html/examples/html_links_examples.cfm">More Link Examples...</a></div>
 ```
 REGEX
 ```
-
+r'<(\w+)(.*?)?>' and this finds the attributes r'\s(\w+)='
 ```
 PYTHON
 ```
+# Solution by a_dobeerman
+for _ in range(int(input())):
+    for tag, att in re.findall(r'<(\w+)(.*?)?>', input()):
+        at = re.findall(r'\s(\w+)=', att)
+        if tag in tagAttributes:
+            tagAttributes[tag].update(at)
+        else:
+            tagAttributes[tag] = set(at)
+# sep parameter in print does not work in every IDE
+# print(*sorted(["{}:{}".format(k,",".join(sorted(v))) for k,v in tagAttributes.items()]), sep = '\n')
+final = sorted(["{}:{}".format(k,",".join(sorted(v))) for k,v in tagAttributes.items()])
+for _4print in final:
+    print(_4print)
+    
+# Another Solution by v110_
+tags = defaultdict(set)
+
+for _ in range(int(input())):
+    for tag, attrs in re.findall(r'<(\w+)(.*?)?>', input()):
+        tags[tag].update(
+            re.findall(r'\s(\w+)=', attrs)
+        )
+print(tags)
+for tag, attrs in sorted(tags.items()):
+    print(tag + ":" + ",".join(sorted(attrs)))
 
 ```
 RESULT
 ```
-
+a:href
+div:class
+p:
 ```
 
 ### Something
