@@ -1,4 +1,4 @@
-/* Build a Stack Exchange Scraper
+""" Build a Stack Exchange Scraper
 
 Stack Exchange is an information power-house, which contains libraries of crowdsourced problems (with answers) across a large number of topics which are as
 diverse as electronics, cooking , programming, etc.
@@ -140,7 +140,7 @@ ID 80405, it is about "5V Regulator Power Dissipation", and it was asked "11 hou
 A Note Regarding the Test Cases
 The markup in the test cases will resemble the markup fragment provided above, however, each markup fragment might contain a larger number of questions
 embedded in it. A markup fragment will have no more than 100 questions embedded in it.
-*/
+"""
 
 # MY SOLUTION
 import re, sys
