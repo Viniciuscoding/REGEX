@@ -39,7 +39,7 @@ damn.jpeg
 ```
 REGEX
 ```
-^(\w+)\.(jpg|jpeg|gif|png)$
+r'^(\w+)\.(jpg|jpeg|gif|png)$'
 ```
 RESULT
 ```
@@ -64,7 +64,7 @@ E/( 1553):   at widget.List.fillFrom(ListView.java:709)
 ```
 REGEX
 ```
-(w+)\(([\w\.]+):(\d+)\)
+r'(w+)\(([\w\.]+):(\d+)\)'
 ```
 RESULT
 ```
@@ -88,7 +88,7 @@ market://search/angry%20birds
 ```
 REGEX
 ```
-(\w+)://([\w\-\.]+)(:(\d+)\)?
+r'(\w+)://([\w\-\.]+)(:(\d+)\)?'
 ```
 RESULT
 ```
