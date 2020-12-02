@@ -456,7 +456,6 @@ Source: https://en.wikipedia.org/wiki/Email_address#:~:text=The%20general%20form
 **Local-Part**
 
 The local-part of the email address may be unquoted or may be enclosed in quotation marks.
-
 If unquoted, it may use any of these ASCII characters:
 ```
 1. uppercase and lowercase Latin letters A to Z and a to z
@@ -661,7 +660,7 @@ TEST
 ```
 REGEX
 ```
-r'\([+-]?(([1-8]?[0-9](\.\d+)?)|90(\.0+)?),\s?[+-]?((((1[0-7]\d)|(\d?\d))(\.\d+)?)|180(\.0+)?)\)'
+rf'\([+-]?(([1-8]?[0-9](\.\d+)?)|90(\.0+)?),\s?[+-]?((((1[0-7]\d)|(\d?\d))(\.\d+)?)|180(\.0+)?)\)'
 ```
 PYTHON
 ```
@@ -683,7 +682,6 @@ RESULT
 ```
 
 ### Finding HTML Attributes
-
 
 
 TEST
