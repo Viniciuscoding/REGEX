@@ -3,8 +3,6 @@ Practicing with Regular Expressions
 
 **\w** -> word characters are defined as: English alphabetic characters [a-zA-Z], decimal digits [0-9] and underscore "_"
 
-
-
 ### Trimming whitespaces from the beginning and end of a phrase.
 
 TEST
@@ -14,7 +12,7 @@ TEST
 ```
 REGEX
 ```
-^\s*(.*)[^\s]*$
+r'^\s*(.*)[^\s]*$'
 ```
 RESULT
 ```
