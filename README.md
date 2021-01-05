@@ -130,6 +130,68 @@ RESULT
 1 1 2000
 ```
 
+
+### Find dates from year 1 to 2021 under the USA calendar format with numbers only. This formula does not take in consideration leap year and letters.
+Trailing zeros can exist on MM, DD and YY such as 01/09/02. However year does not accept trailing zeros for Y, YYY, and YYYY such as 0, 022, 0222 or 0002
+MM/DD/Y
+MM/DD/YY
+MM/DD/YYY
+MM/DD/YYYY
+
+TEST
+```
+this is the date 10/2/2011 of all
+192.23.128.34 10-02-11 they did that
+01-01-2000 or 01 01 20001
+what is this 12/2/20 not me
+1 12 0923
+1 12 0023
+1 12 0003
+0 12 2001
+12 0 2001
+20_12_0912
+12.21.2982
+12.21.2001
+1 1 2000
+1 1 2021
+1 1 2022
+12 1 022
+12 1 02
+12 1 002
+12 1 022
+12 1 0002
+12 1 0222
+12 1 2
+12 1 22
+12 1 212
+12 1 2012
+1_2_30008
+1-12-1956
+12_23_1000
+01---22---2000
+```
+REGEX
+```
+\b(([01][0-9])|([01]?[1-9]))([-._ /])(([0123][0-9])|([0123]?[1-9]))\4((1[0-9][0-9][0-9])|([1-9][0-9][0-9])|([1-9][0-9])|[1-9]|((20[01][0-9]|(202[01]))))\b
+```
+RESULT
+```
+10/2/2011
+10-02-11
+01-01-2000
+12/2/20
+12.21.2001
+1 1 2000
+1 1 2021
+12 1 02
+12 1 2
+12 1 22
+12 1 212
+12 1 2012
+1-12-1956
+12_23_1000
+```
+
 ### Finding Palindromes
 
 This regex palindromes finding is limited to 21 characters long. It excludes words with 1 or 2 characters.
@@ -729,67 +791,6 @@ RESULT
 a:href
 div:class
 p:
-```
-
-### Find dates from year 1 to 2021 under the USA calendar format with numbers only. This formula does not take in consideration leap year and letters.
-Trailing zeros can exist on MM, DD and YY such as 01/09/02. However year does not accept trailing zeros for Y, YYY, and YYYY such as 0, 022, 0222 or 0002
-MM/DD/Y
-MM/DD/YY
-MM/DD/YYY
-MM/DD/YYYY
-
-TEST
-```
-this is the date 10/2/2011 of all
-192.23.128.34 10-02-11 they did that
-01-01-2000 or 01 01 20001
-what is this 12/2/20 not me
-1 12 0923
-1 12 0023
-1 12 0003
-0 12 2001
-12 0 2001
-20_12_0912
-12.21.2982
-12.21.2001
-1 1 2000
-1 1 2021
-1 1 2022
-12 1 022
-12 1 02
-12 1 002
-12 1 022
-12 1 0002
-12 1 0222
-12 1 2
-12 1 22
-12 1 212
-12 1 2012
-1_2_30008
-1-12-1956
-12_23_1000
-01---22---2000
-```
-REGEX
-```
-\b(([01][0-9])|([01]?[1-9]))([-._ /])(([0123][0-9])|([0123]?[1-9]))\4((1[0-9][0-9][0-9])|([1-9][0-9][0-9])|([1-9][0-9])|[1-9]|((20[01][0-9]|(202[01]))))\b
-```
-RESULT
-```
-10/2/2011
-10-02-11
-01-01-2000
-12/2/20
-12.21.2001
-1 1 2000
-1 1 2021
-12 1 02
-12 1 2
-12 1 22
-12 1 212
-12 1 2012
-1-12-1956
-12_23_1000
 ```
 
 ### Something
