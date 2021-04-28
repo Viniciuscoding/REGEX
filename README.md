@@ -65,7 +65,7 @@ E/( 1553):   at widget.List.fillFrom(ListView.java:709)
 ```
 REGEX
 ```
-r'(w+)\(([\w\.]+):(\d+)\)'
+r'(w+)\(([\w\.]+):(\d+))'
 ```
 RESULT
 ```
