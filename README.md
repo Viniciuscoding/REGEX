@@ -24,7 +24,24 @@ RESULT
 ```
 
 
-### Matching specific formats such as jpg, jpeg, gif, and png 
+### Matching image formats such as jpg, jpeg, gif, and png 
+```
+JPEG (And JPG) — Joint Photographic Experts Group
+PNG — Portable Network Graphics
+GIF — Graphics Interchange Format
+WebP
+TIFF
+BMP — Bitmap
+HEIF — High Efficiency Image File Format
+SVG — Scalable Vector Graphics
+EPS — Encapsulated Postscript
+PDF — Portable Document Format
+PSD — Photoshop Document
+AI — Adobe Illustrator Artwork
+XCF — eXperimental Computing Facility
+INDD — Adobe InDesign Document
+Source: https://kinsta.com/blog/image-file-types/
+```
 
 TEST
 ```
@@ -40,7 +57,7 @@ damn.jpeg
 ```
 REGEX
 ```
-r'^(\w+)\.(jpg|jpeg|gif|png)$'
+r'^(\w+)\.(jpg|jpeg|gif|png|webp|tiff|bmp|heif|svg|eps|pdf|psd|ai|xcf|indd)$'
 ```
 RESULT
 ```
