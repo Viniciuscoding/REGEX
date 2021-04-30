@@ -811,6 +811,21 @@ div:class
 p:
 ```
 
+### Finding phone numbers
+
+TEST
+```
+
+```
+REGEX
+```
+r'\+?[- .(]?[0-9]{1,3}[- .)]?\d{3}[ -.]?\d{4}'
+```
+PYTHON
+```
+
+```
+
 ### Something
 
 TEST
@@ -822,6 +837,12 @@ REGEX
 
 ```
 PYTHON
+```
+
+```
+RESULT
+```
+
 ```
 
 ### Something
@@ -844,7 +865,41 @@ RESULT
 ```
 
 
+### Something
 
+TEST
+```
 
+```
+REGEX
+```
 
+```
+PYTHON
+```
+
+```
+RESULT
+```
+
+```
+
+### Something
+
+TEST
+```
+
+```
+REGEX
+```
+
+```
+PYTHON
+```
+
+```
+RESULT
+```
+
+```
 
