@@ -645,7 +645,8 @@ TEST
 ```
 REGEX
 ```
-r'https?:\/\/(ww[w2]\.)?(([a-zA-Z0-9-]+\.)+[a-zA-Z]+)'
+r'https?:\/\/(ww[w2]\.)?(([a-zA-Z0-9-]+\.)+[a-zA-Z]+)' -> Removes only the main website link
+r'https?:\/\/\S+|ww[w2]\.\S+' -> Removes the entire weblink
 ```
 RESULT
 ```
