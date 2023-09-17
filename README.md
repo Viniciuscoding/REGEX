@@ -2,15 +2,12 @@
 Practicing with Regular Expressions
 
 ## Sources for practice
-www.regexr.com
-www.rexegg.com
-www.regex101.com
-www.rubular.com
-www.regextranslator.com
-www.regextutorial.org
-
-
-
+www.regexr.com<br>
+www.rexegg.com<br>
+www.regex101.com<br>
+www.rubular.com<br>
+www.regextranslator.com<br>
+www.regextutorial.org<br>
 
 **\w** -> word characters are defined as: English alphabetic characters [a-zA-Z], decimal digits [0-9] and underscore "_"
 Need to add more info here
